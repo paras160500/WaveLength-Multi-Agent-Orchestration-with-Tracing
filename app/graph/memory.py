@@ -18,7 +18,10 @@ from app.core.llm import llm
 
 class UserProfile(BaseModel):
     customer_id : str = Field(description="The custoemr ID of the customer")
-    music_preferences : List[str] = Field(description="The music preference of the customer")
+    music_preferences: list[str] = Field(
+        default_factory=list,
+        description="The music preferences of the customer"
+    )
 
 
 CREATE_MEMORY_PROMPT = """

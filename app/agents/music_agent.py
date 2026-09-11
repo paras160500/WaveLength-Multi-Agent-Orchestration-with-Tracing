@@ -56,7 +56,9 @@ def generate_music_assistant_prompt(memory : str = "None") -> str:
 def music_assistant(state : State , config : RunnableConfig):
     memory = state.get("loaded_memory" , "None") or "None"
     prompt = generate_music_assistant_prompt(memory)
-    response = llm_with_music_tools.invoke([SystemMessage(prompt) + state['messages']])
+    response = llm_with_music_tools.invoke(
+        [SystemMessage(content=prompt)] + state["messages"]
+    )
     return {"messages" : [response]}
 
 def should_continue(state : State , config : RunnableConfig):

@@ -97,7 +97,7 @@ def _build_trace(raw_messages) -> List[TraceEvent]:
         Turn the raw new messages from this turn into a feed of agent-activity
         events for the frontend's live-trace panel: Who did what in order
     """
-    events = List[TraceEvent] = []
+    events : List[TraceEvent] = []
 
     for msg in raw_messages:
         msg_type = getattr(msg , "type" , None)

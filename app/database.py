@@ -22,7 +22,7 @@ def _build_engine():
     sql_script = response.text 
 
     # check_same_thread = we dont want sql to be like only creation thread can access we want like any thread can access
-    connection = sqlite3.connect(":memory" , check_same_thread=False)
+    connection = sqlite3.connect(":memory:" , check_same_thread=False)
     connection.executescript(sql_script)
 
     return create_engine(
