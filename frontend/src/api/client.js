@@ -1,4 +1,4 @@
-const BASE_URL = "/api";
+const BASE_URL = "https://wavelength-multi-agent-orchestration-mxsm.onrender.com/api";
 
 async function handle(response) {
   if (!response.ok) {
