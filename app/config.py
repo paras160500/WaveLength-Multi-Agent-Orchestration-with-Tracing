@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     chinook_sql_url : str = "https://raw.githubusercontent.com/lerocha/chinook-database/master/ChinookDatabase/DataSources/Chinook_Sqlite.sql"
 
     # API/CORS
-    frontend_origins : str = "http://localhost:5173,http://localhost:3000"
+    frontend_origins : str = "http://localhost:5173,http://localhost:3000,https://wavelength-multi-agent-orchestration.onrender.com/"
     model_config = SettingsConfigDict(env_file=".env" , extra="ignore")
 
     @property
